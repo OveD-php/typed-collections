@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/vistik/type-hinted-arrays.svg?branch=master)](https://travis-ci.org/vistik/type-hinted-arrays) 
+[![Build Status](https://travis-ci.org/vistik/type-hinted-arrays.svg?branch=master)](https://travis-ci.org/vistik/type-hinted-arrays) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vistik/type-hinted-arrays/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vistik/type-hinted-arrays/?branch=master)
