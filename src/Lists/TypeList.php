@@ -21,6 +21,11 @@ abstract class TypeList extends Collection
         }
     }
 
+    public function add($item)
+    {
+        $this->addToCollection(NULL, $item);
+    }
+
     /**
      * Is the item valid
      *
@@ -57,6 +62,11 @@ abstract class TypeList extends Collection
      * @throws InvalidTypeException
      */
     public function offsetSet($key, $value)
+    {
+        $this->addToCollection($key, $value);
+    }
+
+    private function addToCollection($key, $value)
     {
         if (!$this->isValidItem($value)) {
             throw new InvalidTypeException($this->getErrorMsg($value));

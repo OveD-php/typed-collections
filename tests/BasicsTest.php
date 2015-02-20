@@ -114,4 +114,21 @@ class Basics extends TestCase
 
     }
 
+    /**
+    * @test
+    */
+    public function can_add_to_collection_via_add_method()
+    {
+        $user1 = new User('name1', 'email1@example.com');
+        $user2 = new User('name2', 'email2@example.com');
+
+        $list = new UserList();
+        $list->add($user1);
+        $list->add($user2);
+
+        $this->assertEquals($user1, $list->first());
+        $this->assertEquals($user2, $list->last());
+
+    }
+
 }
