@@ -10,7 +10,6 @@ install:
 
 script:
   - phpunit
-  - php coverage-checker.php clover.xml 75
 
 after_success:
-  - php vendor/bin/coveralls -v;
+  - php vendor/bin/coveralls;
