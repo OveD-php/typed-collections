@@ -1,6 +1,7 @@
 {
   "name": "vistik/type-hinted-arrays",
-  "description": "A simple way to create type hinted arrays in PHP",
+  "description": "A simple way to create type hinted arrays in PHP - build on Illuminate\\Collection",
+  "keywords": ["type hint","type hinted", "array", "collection", "collections"],
   "authors": [
     {
       "name": "Visti Kløft",
@@ -8,6 +9,7 @@
     }
   ],
   "require": {
+    "php": ">=5.3.0",
     "illuminate/support": "~5.0"
   },
   "require-dev": {
