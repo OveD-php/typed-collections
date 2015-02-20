@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/vistik/typelist.svg?branch=master)](https://travis-ci.org/vistik/typelist) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vistik/typelist/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vistik/typelist/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/vistik/typelist/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/vistik/typelist/?branch=master)
+[![Build Status](https://travis-ci.org/vistik/type-hinted-arrays.svg?branch=master)](https://travis-ci.org/vistik/type-hinted-arrays) 
