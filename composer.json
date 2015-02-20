@@ -1,0 +1,25 @@
+{
+  "name": "vistik/typelist",
+  "authors": [
+    {
+      "name": "Visti Kløft",
+      "email": "hr.kloft@gmail.com"
+    }
+  ],
+  "require": {
+    "illuminate/support": "~5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vistik\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  }
+}
