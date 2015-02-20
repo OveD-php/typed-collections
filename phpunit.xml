@@ -10,7 +10,7 @@
          stopOnFailure="false"
          syntaxCheck="true">
     <testsuites>
-        <testsuite name="TypeList test suite">
+        <testsuite name="Type Hinted Arrays test suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>
