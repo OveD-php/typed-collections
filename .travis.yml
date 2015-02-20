@@ -9,7 +9,8 @@ install:
   - composer update --prefer-source --no-interaction --no-progress
 
 script:
+  - mkdir -p build/logs
   - phpunit
 
-after_success:
-  - php vendor/bin/coveralls;
+after_script:
+ - php vendor/bin/coveralls -v
