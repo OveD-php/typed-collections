@@ -1,5 +1,6 @@
 {
-  "name": "vistik/typelist",
+  "name": "vistik/type-hinted-arrays",
+  "description": "A simple way to create type hinted arrays in PHP",
   "authors": [
     {
       "name": "Visti Kløft",
