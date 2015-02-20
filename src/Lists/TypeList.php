@@ -20,7 +20,8 @@ abstract class TypeList extends Collection
     }
 
     /**
-     * Add item to collection
+     * Add item
+     *
      * @param $item
      */
     public function add($item)
