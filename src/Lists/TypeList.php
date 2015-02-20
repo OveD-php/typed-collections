@@ -16,14 +16,38 @@ abstract class TypeList extends Collection
     public function __construct()
     {
         $items = func_get_args();
-        foreach ($items as $item){
-            $this->put(null, $item);
-        }
+        $this->addArray($items);
     }
 
+    /**
+     * Add item to collection
+     * @param $item
+     */
     public function add($item)
     {
-        $this->addToCollection(NULL, $item);
+        $this->put(NULL, $item);
+    }
+
+    /**
+     * Add a collection
+     *
+     * @param Collection $collection
+     */
+    public function addCollection(Collection $collection)
+    {
+        $this->addArray($collection->toArray());
+    }
+
+    /**
+     * Add an array
+     *
+     * @param array $array
+     */
+    public function addArray(Array $array)
+    {
+        foreach ($array as $item){
+            $this->put(null, $item);
+        }
     }
 
     /**
@@ -63,11 +87,6 @@ abstract class TypeList extends Collection
      */
     public function offsetSet($key, $value)
     {
-        $this->addToCollection($key, $value);
-    }
-
-    private function addToCollection($key, $value)
-    {
         if (!$this->isValidItem($value)) {
             throw new InvalidTypeException($this->getErrorMsg($value));
         }
@@ -77,6 +96,5 @@ abstract class TypeList extends Collection
             $this->items[$key] = $value;
         }
     }
-
 
 }

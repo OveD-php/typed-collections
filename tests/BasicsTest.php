@@ -1,10 +1,11 @@
 <?php
 
+use Illuminate\Support\Collection;
 use Vistik\Example\User;
 use Vistik\Lists\UserList;
 
 
-class Basics extends TestCase
+class Basics extends PHPUnit_Framework_TestCase
 {
 
     /**
@@ -131,4 +132,41 @@ class Basics extends TestCase
 
     }
 
+    /**
+     * @test
+     */
+    public function can_add_an_array()
+    {
+        $users = [];
+        $users[] = new User('name1', 'email1@example.com');
+        $users[] = new User('name2', 'email2@example.com');
+        $users[] = new User('name3', 'email3@example.com');
+        $users[] = new User('name4', 'email4@example.com');
+
+        $list = new UserList();
+        $list->addArray($users);
+
+        $this->assertEquals(4, $list->count());
+        $this->assertEquals($users, $list->all());
+    }
+
+    /**
+     * @test
+     */
+    public function can_add_a_collection()
+    {
+        /** @var Collection $users */
+        $users = new Collection();
+
+        $users[] = new User('name1', 'email1@example.com');
+        $users[] = new User('name2', 'email2@example.com');
+        $users[] = new User('name3', 'email3@example.com');
+        $users[] = new User('name4', 'email4@example.com');
+
+        $list = new UserList();
+        $list->addCollection($users);
+
+        $this->assertEquals(4, $list->count());
+        $this->assertEquals($users->toArray(), $list->all());
+    }
 }
