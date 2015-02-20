@@ -1,6 +1,6 @@
 {
   "name": "vistik/type-hinted-arrays",
-  "description": "A simple way to create type hinted arrays in PHP - build on Illuminate\\Collection",
+  "description": "A simple way to create type hinted arrays in PHP - build on Illuminate\\Support\\Collection",
   "keywords": ["type hint","type hinted", "array", "collection", "collections"],
   "authors": [
     {
