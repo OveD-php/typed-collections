@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Collection;
 use Vistik\Example\User;
-use Vistik\Lists\UserList;
+use Vistik\Lists\UserArray;
 
 
 class Basics extends PHPUnit_Framework_TestCase
@@ -13,7 +13,7 @@ class Basics extends PHPUnit_Framework_TestCase
      */
     public function can_add_to_type_list()
     {
-        $list = new UserList();
+        $list = new UserArray();
 
         $user = new User('name', 'email@example.com');
         $list[] = $user;
@@ -27,7 +27,7 @@ class Basics extends PHPUnit_Framework_TestCase
      */
     public function can_add_to_type_list_with_a_key()
     {
-        $list = new UserList();
+        $list = new UserArray();
 
         $user = new User('name', 'email@example.com');
         $list['key'] = $user;
@@ -41,7 +41,7 @@ class Basics extends PHPUnit_Framework_TestCase
      */
     public function cannot_add_a_non_user_to_list()
     {
-        $list = new UserList();
+        $list = new UserArray();
 
         $this->setExpectedException('Vistik\Exception\InvalidTypeException', "Item (string) 'not a user' is not a Vistik\\Example\\User object!");
         $list[] = 'not a user';
@@ -58,7 +58,7 @@ class Basics extends PHPUnit_Framework_TestCase
         $user3 = new User('name3', 'email3@example.com');
         $user4 = new User('name4', 'email4@example.com');
 
-        $list = new UserList($user1, $user2, $user3, $user4);
+        $list = new UserArray($user1, $user2, $user3, $user4);
 
         foreach ($list as $item) {
             $this->assertTrue($item instanceof User);
@@ -76,7 +76,7 @@ class Basics extends PHPUnit_Framework_TestCase
         $users[] = new User('name3', 'email3@example.com');
         $users[] = new User('name4', 'email4@example.com');
 
-        $list = new UserList($users[0], $users[1], $users[2], $users[3]);
+        $list = new UserArray($users[0], $users[1], $users[2], $users[3]);
 
         $this->assertEquals(4, count($list));
 
@@ -96,7 +96,7 @@ class Basics extends PHPUnit_Framework_TestCase
         $users[] = new User('name3', 'email3@example.com');
         $users[] = new User('name4', 'email4@example.com');
 
-        $list = new UserList($users[0], $users[1], $users[2], $users[3]);
+        $list = new UserArray($users[0], $users[1], $users[2], $users[3]);
 
         $this->assertEquals(4, $list->count());
         $this->assertEquals($list[0], $list->first());
@@ -123,7 +123,7 @@ class Basics extends PHPUnit_Framework_TestCase
         $user1 = new User('name1', 'email1@example.com');
         $user2 = new User('name2', 'email2@example.com');
 
-        $list = new UserList();
+        $list = new UserArray();
         $list->add($user1);
         $list->add($user2);
 
@@ -143,8 +143,7 @@ class Basics extends PHPUnit_Framework_TestCase
         $users[] = new User('name3', 'email3@example.com');
         $users[] = new User('name4', 'email4@example.com');
 
-        $list = new UserList();
-        $list->addArray($users);
+        $list = (new UserArray())->addArray($users);
 
         $this->assertEquals(4, $list->count());
         $this->assertEquals($users, $list->all());
@@ -163,10 +162,10 @@ class Basics extends PHPUnit_Framework_TestCase
         $users[] = new User('name3', 'email3@example.com');
         $users[] = new User('name4', 'email4@example.com');
 
-        $list = new UserList();
-        $list->addCollection($users);
+        $list = (new UserArray())->addCollection($users);
 
         $this->assertEquals(4, $list->count());
         $this->assertEquals($users->toArray(), $list->all());
     }
+
 }

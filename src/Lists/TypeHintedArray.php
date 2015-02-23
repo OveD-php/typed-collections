@@ -5,7 +5,7 @@ namespace Vistik\Lists;
 use Illuminate\Support\Collection;
 use Vistik\Exception\InvalidTypeException;
 
-abstract class TypeList extends Collection
+abstract class TypeHintedArray extends Collection
 {
 
     protected $type;
@@ -33,22 +33,25 @@ abstract class TypeList extends Collection
      * Add a collection
      *
      * @param Collection $collection
+     * @return $this
      */
     public function addCollection(Collection $collection)
     {
-        $this->addArray($collection->toArray());
+        return $this->addArray($collection->toArray());
     }
 
     /**
      * Add an array
      *
      * @param array $array
+     * @return $this
      */
     public function addArray(Array $array)
     {
         foreach ($array as $item){
             $this->put(null, $item);
         }
+        return $this;
     }
 
     /**

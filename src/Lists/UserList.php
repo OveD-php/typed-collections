@@ -2,7 +2,7 @@
 
 namespace Vistik\Lists;
 
-class UserList extends TypeList{
+class UserArray extends TypeHintedArray{
 
     protected $type = 'Vistik\Example\User';
 }
