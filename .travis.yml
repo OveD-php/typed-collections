@@ -14,3 +14,9 @@ script:
 
 after_script:
  - php vendor/bin/coveralls -v
+ 
+before_install:
+  - pip install codecov
+  
+after_success:
+  - codecov
