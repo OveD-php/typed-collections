@@ -1,7 +1,13 @@
 {
   "name": "vistik/type-hinted-arrays",
-  "description": "A simple way to create type hinted arrays in PHP - build on Illuminate\\Support\\Collection",
-  "keywords": ["type hint","type hinted", "array", "collection", "collections"],
+  "description": "A simple way to create typed collections in PHP - build on Illuminate\\Support\\Collection",
+  "keywords": [
+    "type hint",
+    "type hinted",
+    "array",
+    "collection",
+    "collections"
+  ],
   "authors": [
     {
       "name": "Visti Kløft",
@@ -9,17 +15,20 @@
     }
   ],
   "require": {
-    "php": ">=5.3.0",
-    "illuminate/support": "~5.0",
-    "satooshi/php-coveralls": "~0.6@stable"
+    "php": ">=7.0.0",
+    "illuminate/support": "~5.4",
+    "phpmd/phpmd": "^2.6"
   },
   "require-dev": {
-    "phpunit/phpunit": "~4.0"
+    "phpunit/phpunit": "~6.0"
   },
   "autoload": {
     "psr-4": {
       "Vistik\\": "src/"
-    }
+    },
+    "files": [
+      "src/helpers.php"
+    ]
   },
   "autoload-dev": {
     "classmap": [

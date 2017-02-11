@@ -1,66 +1,45 @@
 <?php
 
-namespace Vistik\Lists;
+namespace Vistik\Collections;
 
 use Illuminate\Support\Collection;
 use Vistik\Exception\InvalidTypeException;
 
-abstract class TypeHintedArray extends Collection
+abstract class TypedCollection extends Collection
 {
 
     protected $type;
 
     /**
      * Create a object and add items
+     * @param null $items
      */
-    public function __construct()
+    public function __construct($items = null)
     {
-        $items = func_get_args();
-        $this->addArray($items);
-    }
+        $items = $this->getArrayableItems($items);
 
-    /**
-     * Add item
-     *
-     * @param $item
-     */
-    public function add($item)
-    {
-        $this->put(NULL, $item);
-    }
-
-    /**
-     * Add a collection
-     *
-     * @param Collection $collection
-     * @return $this
-     */
-    public function addCollection(Collection $collection)
-    {
-        return $this->addArray($collection->toArray());
+        $this->addMultiple($items);
     }
 
     /**
      * Add an array
      *
      * @param array $array
-     * @return $this
      */
-    public function addArray(Array $array)
+    private function addMultiple(array $array)
     {
-        foreach ($array as $item){
-            $this->put(null, $item);
+        foreach ($array as $item) {
+            $this->offsetSet(null, $item);
         }
-        return $this;
     }
 
     /**
-     * Is the item valid
+     * Is the item valid - overwrite if you need another check
      *
      * @param $item
      * @return bool
      */
-    protected function isValidItem($item)
+    protected function isValidItem($item): bool
     {
         return is_a($item, $this->type);
     }
@@ -71,15 +50,15 @@ abstract class TypeHintedArray extends Collection
      * @param $item
      * @return string
      */
-    protected function getErrorMsg($item)
+    protected function getErrorMsg($item): string
     {
         if (is_object($item)) {
             return sprintf("Item '%s' is not a %s object!", get_class($item), $this->type);
         } elseif (is_array($item)) {
             return sprintf("Item (%s) '%s' is not a %s object!", gettype($item), print_r($item, true), $this->type);
-        } else {
-            return sprintf("Item (%s) '%s' is not a %s object!", gettype($item), $item, $this->type);
         }
+
+        return sprintf("Item (%s) '%s' is not a %s object!", gettype($item), $item, $this->type);
     }
 
     /**
@@ -94,11 +73,7 @@ abstract class TypeHintedArray extends Collection
         if (!$this->isValidItem($value)) {
             throw new InvalidTypeException($this->getErrorMsg($value));
         }
-        if (is_null($key)) {
-            $this->items[] = $value;
-        } else {
-            $this->items[$key] = $value;
-        }
-    }
 
+        parent::offsetSet($key, $value);
+    }
 }
