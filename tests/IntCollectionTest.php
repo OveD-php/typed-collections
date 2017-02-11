@@ -13,7 +13,7 @@ class IntCollectionTest extends TestCase
      * @test
      *
      */
-    public function cannot_add_string_to_collection()
+    public function can_add_string_to_collection()
     {
         // Given
         $ints = [1, 2, 3, 4];
@@ -30,7 +30,7 @@ class IntCollectionTest extends TestCase
      * @test
      *
      */
-    public function cannot_add_a_non_string_to_collection()
+    public function cannot_add_a_string_to_collection()
     {
         // Given
         $random = Str::random();

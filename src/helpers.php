@@ -4,6 +4,7 @@ use Vistik\Collections\BoolCollection;
 use Vistik\Collections\EmailCollection;
 use Vistik\Collections\FloatCollection;
 use Vistik\Collections\IntCollection;
+use Vistik\Collections\NumberCollection;
 use Vistik\Collections\StringCollection;
 use Vistik\Collections\TypedCollection;
 
@@ -39,6 +40,13 @@ if (! function_exists('eCollect')) {
     function eCollect($value = null): TypedCollection
     {
         return new EmailCollection($value);
+    }
+}
+
+if (! function_exists('nCollect')) {
+    function nCollect($value = null): TypedCollection
+    {
+        return new NumberCollection($value);
     }
 }
 

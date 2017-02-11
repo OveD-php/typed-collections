@@ -13,7 +13,7 @@ class EmailCollectionTest extends TestCase
     public function can_add_email_to_list()
     {
         $email = 'email@example.com';
-        $el = new EmailCollection('email@example.com');
+        $el = new EmailCollection($email);
 
         $this->assertEquals($email, $el->first());
     }
@@ -25,7 +25,7 @@ class EmailCollectionTest extends TestCase
     {
         $this->expectException(InvalidTypeException::class);
         $this->expectExceptionMessage('invalidEmail is not a valid email address');
-        $el = new EmailCollection('invalidEmail');
+        new EmailCollection('invalidEmail');
     }
 
     /**
