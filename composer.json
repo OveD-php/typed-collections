@@ -1,5 +1,5 @@
 {
-  "name": "vistik/typed-collection",
+  "name": "vistik/type-hinted-arrays",
   "description": "A simple way to create typed collections in PHP - build on Illuminate\\Support\\Collection",
   "keywords": [
     "type hint",
