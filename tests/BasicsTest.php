@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Collection;
+use PHPUnit\Framework\TestCase;
 use Vistik\Example\User;
-use Vistik\Lists\UserArray;
+use Vistik\Exception\InvalidTypeException;
+use Vistik\Collections\UserCollection;
 
-
-class Basics extends PHPUnit_Framework_TestCase
+class Basics extends TestCase
 {
 
     /**
@@ -13,7 +14,7 @@ class Basics extends PHPUnit_Framework_TestCase
      */
     public function can_add_to_type_list()
     {
-        $list = new UserArray();
+        $list = new UserCollection();
 
         $user = new User('name', 'email@example.com');
         $list[] = $user;
@@ -27,7 +28,7 @@ class Basics extends PHPUnit_Framework_TestCase
      */
     public function can_add_to_type_list_with_a_key()
     {
-        $list = new UserArray();
+        $list = new UserCollection();
 
         $user = new User('name', 'email@example.com');
         $list['key'] = $user;
@@ -41,9 +42,10 @@ class Basics extends PHPUnit_Framework_TestCase
      */
     public function cannot_add_a_non_user_to_list()
     {
-        $list = new UserArray();
+        $list = new UserCollection();
 
-        $this->setExpectedException('Vistik\Exception\InvalidTypeException', "Item (string) 'not a user' is not a Vistik\\Example\\User object!");
+        $this->expectException(InvalidTypeException::class);
+        $this->expectExceptionMessage("Item (string) 'not a user' is not a Vistik\\Example\\User object!");
         $list[] = 'not a user';
     }
 
@@ -58,7 +60,7 @@ class Basics extends PHPUnit_Framework_TestCase
         $user3 = new User('name3', 'email3@example.com');
         $user4 = new User('name4', 'email4@example.com');
 
-        $list = new UserArray($user1, $user2, $user3, $user4);
+        $list = new UserCollection([$user1, $user2, $user3, $user4]);
 
         foreach ($list as $item) {
             $this->assertTrue($item instanceof User);
@@ -76,7 +78,7 @@ class Basics extends PHPUnit_Framework_TestCase
         $users[] = new User('name3', 'email3@example.com');
         $users[] = new User('name4', 'email4@example.com');
 
-        $list = new UserArray($users[0], $users[1], $users[2], $users[3]);
+        $list = new UserCollection([$users[0], $users[1], $users[2], $users[3]]);
 
         $this->assertEquals(4, count($list));
 
@@ -96,7 +98,7 @@ class Basics extends PHPUnit_Framework_TestCase
         $users[] = new User('name3', 'email3@example.com');
         $users[] = new User('name4', 'email4@example.com');
 
-        $list = new UserArray($users[0], $users[1], $users[2], $users[3]);
+        $list = new UserCollection($users);
 
         $this->assertEquals(4, $list->count());
         $this->assertEquals($list[0], $list->first());
@@ -110,30 +112,11 @@ class Basics extends PHPUnit_Framework_TestCase
         $this->assertEquals($users, $list->all());
 
         $list->count(3, $list->count());
-//        $this->assertFalse($list->contains(0));
-//        $this->assertTrue($list->contains(1));
-
-    }
-
-    /**
-    * @test
-    */
-    public function can_add_to_collection_via_add_method()
-    {
-        $user1 = new User('name1', 'email1@example.com');
-        $user2 = new User('name2', 'email2@example.com');
-
-        $list = new UserArray();
-        $list->add($user1);
-        $list->add($user2);
-
-        $this->assertEquals($user1, $list->first());
-        $this->assertEquals($user2, $list->last());
-
     }
 
     /**
      * @test
+     * @group visti
      */
     public function can_add_an_array()
     {
@@ -143,10 +126,10 @@ class Basics extends PHPUnit_Framework_TestCase
         $users[] = new User('name3', 'email3@example.com');
         $users[] = new User('name4', 'email4@example.com');
 
-        $list = (new UserArray())->addArray($users);
+        $list = new UserCollection($users);
 
-        $this->assertEquals(4, $list->count());
         $this->assertEquals($users, $list->all());
+        $this->assertEquals(4, $list->count());
     }
 
     /**
@@ -162,7 +145,7 @@ class Basics extends PHPUnit_Framework_TestCase
         $users[] = new User('name3', 'email3@example.com');
         $users[] = new User('name4', 'email4@example.com');
 
-        $list = (new UserArray())->addCollection($users);
+        $list = new UserCollection($users);
 
         $this->assertEquals(4, $list->count());
         $this->assertEquals($users->toArray(), $list->all());
