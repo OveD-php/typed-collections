@@ -14,16 +14,16 @@ class NumberCollectionTest extends TestCase
      * @test
      *
      */
-    public function cannot_add_string_to_collection()
+    public function can_add_any_number_to_collection()
     {
         // Given
-        $numbers = [1, 2.55, 3.14, 6 + 7];
+        $numbers = [1, 2.55, 3.14, 6 + 7, INF];
 
         // When
         $collection = new NumberCollection($numbers);
 
         // Then
-        $this->assertEquals(4, $collection->count());
+        $this->assertEquals(5, $collection->count());
         $this->assertEquals($numbers, $collection->toArray());
     }
 

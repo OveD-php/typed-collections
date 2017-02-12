@@ -25,6 +25,15 @@ Out-of-the-box collections for:
  - Strings
  - Emails
  - Numbers (float or int)
+ 
+They can be created with out-of-the-box laraval style helpers:
+
+- `bCollect([true, false])` - To create a BoolCollection
+- `iCollect([1, 2, 3, 4])` - To create a IntegerCollection
+- `fCollect([3.14, 22/7, 6.66])` - To create a FloatCollection
+- `sCollect(['hello', 'world''])` - To create a StringCollection
+- `eCollect(['hello@example.org', 'write@me.com'])` - To create a EmailCollection
+- `nCollect([1, 2, 3, 4, 3.14, INF])` - To create a NumberCollection
 
 ### Do I have to create a type for each list? Yes, but
 Look how easy it is:
