@@ -15,7 +15,7 @@ Will throw:
 `Vistik\Exception\InvalidTypeException: Item (string) 'User' is not a Vistik\Example\User object!`
 
 ### Install
-Run `composer require vistik/typed-collection`
+Run `composer require vistik/typed-collections`
 
 ### Use build in Collections for primitives
 Out-of-the-box collections for:
