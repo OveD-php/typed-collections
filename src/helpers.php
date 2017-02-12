@@ -9,42 +9,42 @@ use Vistik\Collections\StringCollection;
 use Vistik\Collections\TypedCollection;
 
 if (! function_exists('iCollect')) {
-    function iCollect($value = null): TypedCollection
+    function iCollect($value = null): IntCollection
     {
         return new IntCollection($value);
     }
 }
 
 if (! function_exists('sCollect')) {
-    function sCollect($value = null): TypedCollection
+    function sCollect($value = null): StringCollection
     {
         return new StringCollection($value);
     }
 }
 
 if (! function_exists('bCollect')) {
-    function bCollect($value = null): TypedCollection
+    function bCollect($value = null): BoolCollection
     {
         return new BoolCollection($value);
     }
 }
 
 if (! function_exists('fCollect')) {
-    function fCollect($value = null): TypedCollection
+    function fCollect($value = null): FloatCollection
     {
         return new FloatCollection($value);
     }
 }
 
 if (! function_exists('eCollect')) {
-    function eCollect($value = null): TypedCollection
+    function eCollect($value = null): EmailCollection
     {
         return new EmailCollection($value);
     }
 }
 
 if (! function_exists('nCollect')) {
-    function nCollect($value = null): TypedCollection
+    function nCollect($value = null): NumberCollection
     {
         return new NumberCollection($value);
     }
