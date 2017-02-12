@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/vistik/type-hinted-arrays.svg?branch=master)](https://travis-ci.org/vistik/type-hinted-arrays) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vistik/type-hinted-arrays/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vistik/type-hinted-arrays/?branch=master) [![Coverage Status](https://coveralls.io/repos/vistik/type-hinted-arrays/badge.svg?branch=master)](https://coveralls.io/r/vistik/type-hinted-arrays?branch=master) [![Dependency Status](https://www.versioneye.com/user/projects/54e7ae0ed1ec5734f4000e02/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54e7ae0ed1ec5734f4000e02)
+[![Build Status](https://travis-ci.org/vistik/type-hinted-arrays.svg?branch=master)](https://travis-ci.org/vistik/type-hinted-arrays)
 
 ### What is this?
 
