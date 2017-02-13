@@ -38,8 +38,9 @@ They can be created with out-of-the-box laraval style helpers:
 ### Do I have to create a type for each list? Yes, but
 Look how easy it is:
 
+    use Vistik\Example\User;
     class UserCollection extends TypedCollection{
-        protected $type = 'Vistik\Example\User';
+        protected $type = User::class;
     }
 
 2 simple steps
