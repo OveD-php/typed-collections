@@ -31,9 +31,5 @@
     "files": [
       "src/helpers.php"
     ]
-  },
-  "autoload-dev": {
-    "classmap": [
-    ]
   }
 }
