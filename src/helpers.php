@@ -49,4 +49,3 @@ if (! function_exists('nCollect')) {
         return new NumberCollection($value);
     }
 }
-

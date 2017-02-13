@@ -3,6 +3,7 @@ namespace Vistik\Exception;
 
 use Exception;
 
-class InvalidTypeException extends Exception{
+class InvalidTypeException extends Exception
+{
 
 }
