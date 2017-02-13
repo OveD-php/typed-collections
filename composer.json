@@ -1,6 +1,7 @@
 {
   "name": "vistik/typed-collections",
   "description": "A simple way to create typed collections in PHP - build on Illuminate\\Support\\Collection",
+  "license": "MIT",
   "keywords": [
     "type hint",
     "type hinted",
