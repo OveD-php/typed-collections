@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/vistik/type-hinted-arrays.svg?branch=master)](https://travis-ci.org/vistik/type-hinted-arrays)
+[![Build Status](https://travis-ci.org/vistik/typed-collections.svg?branch=master)](https://travis-ci.org/vistik/typed-collections)
 
 ### What is this?
 
