@@ -2,12 +2,18 @@ language: php
 php:
   - 7.0
   - 7.1
+env:
+  - SUPPORT_VERSION="5.4.*"
+  - SUPPORT_VERSION="5.3.*"
+  - SUPPORT_VERSION="5.2.*"
+  - SUPPORT_VERSION="5.1.*"
 
 sudo: required
 
 install:
-  - composer update --prefer-source --no-interaction --no-progress
-
+  - composer install --prefer-source --no-interaction --no-progress
+  - composer require illuminate/support:${SUPPORT_VERSION}
+  
 script:
   - phpunit
   - ./vendor/bin/phpmd src text cleancode, codesize, controversial, design, naming, unusedcode
