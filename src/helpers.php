@@ -1,12 +1,12 @@
 <?php
 
-use Vistik\Collections\BoolCollection;
-use Vistik\Collections\EmailCollection;
-use Vistik\Collections\FloatCollection;
-use Vistik\Collections\IntCollection;
-use Vistik\Collections\NumberCollection;
-use Vistik\Collections\StringCollection;
-use Vistik\Collections\TypedCollection;
+use Phpsafari\Collections\BoolCollection;
+use Phpsafari\Collections\EmailCollection;
+use Phpsafari\Collections\FloatCollection;
+use Phpsafari\Collections\IntCollection;
+use Phpsafari\Collections\NumberCollection;
+use Phpsafari\Collections\StringCollection;
+use Phpsafari\Collections\TypedCollection;
 
 if (! function_exists('iCollect')) {
     function iCollect($value = null): IntCollection

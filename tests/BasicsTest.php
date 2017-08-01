@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Collection;
 use PHPUnit\Framework\TestCase;
-use Vistik\Example\User;
-use Vistik\Exception\InvalidTypeException;
-use Vistik\Collections\UserCollection;
+use Phpsafari\Example\User;
+use Phpsafari\Exception\InvalidTypeException;
+use Phpsafari\Collections\UserCollection;
 
 class Basics extends TestCase
 {
@@ -45,7 +45,7 @@ class Basics extends TestCase
         $list = new UserCollection();
 
         $this->expectException(InvalidTypeException::class);
-        $this->expectExceptionMessage("Item (string) 'not a user' is not a Vistik\\Example\\User object!");
+        $this->expectExceptionMessage("Item (string) 'not a user' is not a Phpsafari\\Example\\User object!");
         $list[] = 'not a user';
     }
 

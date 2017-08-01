@@ -1,8 +1,8 @@
 <?php
 
-namespace Vistik\Collections;
+namespace Phpsafari\Collections;
 
-use Vistik\Example\User;
+use Phpsafari\Example\User;
 
 class UserCollection extends TypedCollection
 {

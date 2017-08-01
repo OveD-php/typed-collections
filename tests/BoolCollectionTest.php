@@ -3,9 +3,9 @@
 
 use Illuminate\Support\Str;
 use PHPUnit\Framework\TestCase;
-use Vistik\Collections\BoolCollection;
-use Vistik\Exception\InvalidTypeException;
-use Vistik\Collections\StringCollection;
+use Phpsafari\Collections\BoolCollection;
+use Phpsafari\Exception\InvalidTypeException;
+use Phpsafari\Collections\StringCollection;
 
 class BoolCollectionTest extends TestCase
 {

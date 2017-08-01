@@ -1,9 +1,9 @@
 <?php
 
-namespace Vistik\Collections;
+namespace Phpsafari\Collections;
 
 use Illuminate\Support\Collection;
-use Vistik\Exception\InvalidTypeException;
+use Phpsafari\Exception\InvalidTypeException;
 
 abstract class TypedCollection extends Collection
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Vistik\Exception;
+namespace Phpsafari\Exception;
 
 use Exception;
 
