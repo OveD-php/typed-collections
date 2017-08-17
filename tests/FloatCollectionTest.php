@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Vistik\Collections\FloatCollection;
-use Vistik\Exception\InvalidTypeException;
+use Phpsafari\Collections\FloatCollection;
+use Phpsafari\Exception\InvalidTypeException;
 
 class FloatCollectionTest extends TestCase
 {

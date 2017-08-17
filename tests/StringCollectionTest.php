@@ -3,8 +3,8 @@
 
 use Illuminate\Support\Str;
 use PHPUnit\Framework\TestCase;
-use Vistik\Exception\InvalidTypeException;
-use Vistik\Collections\StringCollection;
+use Phpsafari\Exception\InvalidTypeException;
+use Phpsafari\Collections\StringCollection;
 
 class StringCollectionTest extends TestCase
 {

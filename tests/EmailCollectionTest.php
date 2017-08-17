@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Vistik\Exception\InvalidTypeException;
-use Vistik\Collections\EmailCollection;
+use Phpsafari\Exception\InvalidTypeException;
+use Phpsafari\Collections\EmailCollection;
 
 class EmailCollectionTest extends TestCase
 {
