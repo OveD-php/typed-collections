@@ -1,5 +1,5 @@
 {
-  "name": "vistik/typed-collections",
+  "name": "phpsafari/typed-collections",
   "description": "A simple way to create typed collections in PHP - build on Illuminate\\Support\\Collection",
   "license": "MIT",
   "keywords": [
@@ -13,21 +13,25 @@
     {
       "name": "Visti Kløft",
       "email": "hr.kloft@gmail.com"
+    },
+    {
+      "name": "Peter Suhm",
+      "email": "peter@suhm.dk"
     }
   ],
   "require": {
     "php": ">=7.0.0",
-    "illuminate/support": "~5.4",
-    "phpmd/phpmd": "^2.6",
-    "squizlabs/php_codesniffer": "*"
+    "illuminate/support": "5.4.*|5.3.*|5.2.*|5.1.*"
   },
   "require-dev": {
     "phpunit/phpunit": "~6.0",
-    "spatie/phpunit-watcher": "^1.3"
+    "spatie/phpunit-watcher": "^1.3",
+    "squizlabs/php_codesniffer": "*",
+    "phpmd/phpmd": "^2.6"
   },
   "autoload": {
     "psr-4": {
-      "Vistik\\": "src/"
+      "Phpsafari\\": "src/"
     },
     "files": [
       "src/helpers.php"

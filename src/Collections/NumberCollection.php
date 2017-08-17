@@ -1,6 +1,6 @@
 <?php
 
-namespace Vistik\Collections;
+namespace Phpsafari\Collections;
 
 class NumberCollection extends TypedCollection
 {

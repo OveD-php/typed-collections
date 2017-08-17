@@ -1,6 +1,6 @@
 <?php
 
-namespace Vistik\Example;
+namespace Phpsafari\Example;
 
 class User
 {
