@@ -28,9 +28,9 @@ abstract class TypedCollection extends Collection
      */
     private function addMultiple(array $array)
     {
-        foreach ($array as $item) {
+        array_map(function($item){
             $this->offsetSet(null, $item);
-        }
+        }, $array);
     }
 
     /**
@@ -75,5 +75,15 @@ abstract class TypedCollection extends Collection
         }
 
         parent::offsetSet($key, $value);
+    }
+
+    /**
+     * Return this typed collection as a plain collection.
+     *
+     * @return Collection
+     */
+    public function toCollection(): Collection
+    {
+        return collect($this->toArray());
     }
 }

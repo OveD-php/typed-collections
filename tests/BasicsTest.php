@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Collection;
 use PHPUnit\Framework\TestCase;
+use Vistik\Collections\UserCollection;
 use Vistik\Example\User;
 use Vistik\Exception\InvalidTypeException;
-use Vistik\Collections\UserCollection;
 
 class Basics extends TestCase
 {
@@ -82,7 +82,7 @@ class Basics extends TestCase
 
         $this->assertEquals(4, count($list));
 
-        for ($i = 0; $i < count($list); $i ++) {
+        for ($i = 0; $i < count($list); $i++) {
             $this->assertEquals($list[$i], $users[$i]);
         }
     }
@@ -149,6 +149,50 @@ class Basics extends TestCase
 
         $this->assertEquals(4, $list->count());
         $this->assertEquals($users->toArray(), $list->all());
+    }
+
+    /**
+     * @test
+     *
+     */
+    public function can_convert_to_plain_collection()
+    {
+        // Given
+        /** @var Collection $users */
+        $users = new Collection();
+
+        $users[] = new User('name1', 'email1@example.com');
+        $users[] = new User('name2', 'email2@example.com');
+        $users[] = new User('name3', 'email3@example.com');
+        $users[] = new User('name4', 'email4@example.com');
+
+        // When
+        $list = new UserCollection($users);
+        $collection = $list->toCollection();
+
+        // Then
+        $this->assertEquals(4, $collection->count());
+        $this->assertTrue($collection instanceof Collection);
+        $this->assertFalse($collection instanceof UserCollection);
+        $this->assertEquals($collection->toArray(), $list->all());
+    }
+
+    /**
+     * @test
+     *
+     */
+    public function can_reduce_collection()
+    {
+        // Given
+        $collection = nCollect([1, 2, 3, 4, 5]);
+
+        // When
+        $processed = $collection->toCollection()->map(function ($item) {
+            return 'visti-' . $item;
+        });
+
+        // Then
+        $this->assertEquals(['visti-1', 'visti-2', 'visti-3', 'visti-4', 'visti-5'], $processed->toArray());
     }
 
 }
