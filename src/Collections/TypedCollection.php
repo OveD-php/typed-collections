@@ -28,7 +28,7 @@ abstract class TypedCollection extends Collection
      */
     private function addMultiple(array $array)
     {
-        array_map(function($item){
+        array_map(function ($item) {
             $this->offsetSet(null, $item);
         }, $array);
     }
