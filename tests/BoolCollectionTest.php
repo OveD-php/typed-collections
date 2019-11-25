@@ -3,9 +3,9 @@
 
 use Illuminate\Support\Str;
 use PHPUnit\Framework\TestCase;
-use Phpsafari\Collections\BoolCollection;
-use Phpsafari\Exception\InvalidTypeException;
-use Phpsafari\Collections\StringCollection;
+use PhpSafari\Collections\BoolCollection;
+use PhpSafari\Exception\InvalidTypeException;
+use PhpSafari\Collections\StringCollection;
 
 class BoolCollectionTest extends TestCase
 {

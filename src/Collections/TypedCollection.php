@@ -1,9 +1,9 @@
 <?php
 
-namespace Phpsafari\Collections;
+namespace PhpSafari\Collections;
 
 use Illuminate\Support\Collection;
-use Phpsafari\Exception\InvalidTypeException;
+use PhpSafari\Exception\InvalidTypeException;
 
 abstract class TypedCollection extends Collection
 {

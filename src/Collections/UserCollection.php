@@ -1,8 +1,8 @@
 <?php
 
-namespace Phpsafari\Collections;
+namespace PhpSafari\Collections;
 
-use Phpsafari\Example\User;
+use PhpSafari\Example\User;
 
 class UserCollection extends TypedCollection
 {

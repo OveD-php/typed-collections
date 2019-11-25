@@ -3,9 +3,9 @@
 
 use Illuminate\Support\Str;
 use PHPUnit\Framework\TestCase;
-use Phpsafari\Collections\NumberCollection;
-use Phpsafari\Exception\InvalidTypeException;
-use Phpsafari\Collections\IntCollection;
+use PhpSafari\Collections\NumberCollection;
+use PhpSafari\Exception\InvalidTypeException;
+use PhpSafari\Collections\IntCollection;
 
 class NumberCollectionTest extends TestCase
 {

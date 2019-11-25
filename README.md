@@ -38,7 +38,7 @@ They can be created with out-of-the-box laraval style helpers:
 ### Do I have to create a type for each list? Yes, but
 Look how easy it is:
 
-    use Phpsafari\Example\User;
+    use PhpSafari\Example\User;
     class UserCollection extends TypedCollection{
         protected $type = User::class;
     }

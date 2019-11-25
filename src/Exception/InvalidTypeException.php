@@ -1,5 +1,5 @@
 <?php
-namespace Phpsafari\Exception;
+namespace PhpSafari\Exception;
 
 use Exception;
 

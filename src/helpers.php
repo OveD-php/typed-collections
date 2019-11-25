@@ -1,12 +1,12 @@
 <?php
 
-use Phpsafari\Collections\BoolCollection;
-use Phpsafari\Collections\EmailCollection;
-use Phpsafari\Collections\FloatCollection;
-use Phpsafari\Collections\IntCollection;
-use Phpsafari\Collections\NumberCollection;
-use Phpsafari\Collections\StringCollection;
-use Phpsafari\Collections\TypedCollection;
+use PhpSafari\Collections\BoolCollection;
+use PhpSafari\Collections\EmailCollection;
+use PhpSafari\Collections\FloatCollection;
+use PhpSafari\Collections\IntCollection;
+use PhpSafari\Collections\NumberCollection;
+use PhpSafari\Collections\StringCollection;
+use PhpSafari\Collections\TypedCollection;
 
 if (! function_exists('iCollect')) {
     function iCollect($value = null): IntCollection

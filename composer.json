@@ -31,7 +31,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Phpsafari\\": "src/"
+      "PhpSafari\\": "src/"
     },
     "files": [
       "src/helpers.php"
