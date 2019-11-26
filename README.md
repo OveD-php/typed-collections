@@ -12,7 +12,7 @@ OK
 
 Will throw:
 
-`Vistik\Exception\InvalidTypeException: Item (string) 'User' is not a Vistik\Example\User object!`
+`PhpSafari\Exception\InvalidTypeException: Item (string) 'User' is not a PhpSafari\Example\User object!`
 
 ### Install
 Run `composer require vistik/typed-collections`
@@ -38,7 +38,7 @@ They can be created with out-of-the-box laraval style helpers:
 ### Do I have to create a type for each list? Yes, but
 Look how easy it is:
 
-    use Phpsafari\Example\User;
+    use PhpSafari\Example\User;
     class UserCollection extends TypedCollection{
         protected $type = User::class;
     }
@@ -46,7 +46,7 @@ Look how easy it is:
 2 simple steps
 
 1) Create a Class eg. `AccountCollection` extend `TypedCollection`  
-2) Just replace `protected $type = 'Vistik\Example\User';` with your class
+2) Just replace `protected $type = 'PhpSafari\Example\User';` with your class
 
 or
 

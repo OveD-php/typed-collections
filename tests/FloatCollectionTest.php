@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Phpsafari\Collections\FloatCollection;
-use Phpsafari\Exception\InvalidTypeException;
+use PhpSafari\Collections\FloatCollection;
+use PhpSafari\Exception\InvalidTypeException;
 
 class FloatCollectionTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpsafari\Example;
+namespace PhpSafari\Example;
 
 class User
 {

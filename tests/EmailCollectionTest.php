@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Phpsafari\Exception\InvalidTypeException;
-use Phpsafari\Collections\EmailCollection;
+use PhpSafari\Exception\InvalidTypeException;
+use PhpSafari\Collections\EmailCollection;
 
 class EmailCollectionTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpsafari\Collections;
+namespace PhpSafari\Collections;
 
 class BoolCollection extends TypedCollection
 {
